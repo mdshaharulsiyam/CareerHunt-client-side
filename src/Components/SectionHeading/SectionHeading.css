@@ -1,0 +1,15 @@
+.sectionheading{
+    position: relative;
+
+}
+
+.sectionheading::after{
+    content: '';
+    position: absolute;
+    background: red;
+    width: 8px;
+    height: 100%;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+}

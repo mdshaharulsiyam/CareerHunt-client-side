@@ -1,0 +1,7 @@
+.menues .active{
+    text-decoration: underline;
+    color: blue;
+}
+.menushow{
+    transition: 1s ease all;
+}
