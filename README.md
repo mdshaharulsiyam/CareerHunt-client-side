@@ -1,4 +1,3 @@
-## assignment12_category_0007
 
 # [CareerHunt](https://gregarious-mandazi-69cbd9.netlify.app/)
 ## [live link:](https://gregarious-mandazi-69cbd9.netlify.app/)(https://gregarious-mandazi-69cbd9.netlify.app/)
