@@ -10,6 +10,7 @@ import { useForm } from 'react-hook-form'
 import { FaRegWindowClose } from 'react-icons/fa'
 import Swal from 'sweetalert2'
 import useGetUserData from '../../Hooks/useGetUserData'
+import useGetSubmitedAssignment from '../../Hooks/useGetSubmitedAssignment'
 const Assignments = () => {
   document.title = "CareerHunt | Dashboard Assignments"
   const { currentUser } = useContext(CareerHuntData)
@@ -17,6 +18,8 @@ const Assignments = () => {
   const { id } = useParams()
   const axiossecure = useAxiosSecure()
   const { loading, myassignments, refetch } = useGetAssignment(currentUser?.useremail, id, userData?._id)
+  const { loadingdata, mysubmission, refetchdata } = useGetSubmitedAssignment(currentUser?.useremail, id, userData?._id)
+  console.log(mysubmission);
   const axiosrequest = useAxiosrequest()
   const [CourseDetails, setCourseDetails] = useState(null)
   const [show, setshow] = useState(false)
@@ -61,6 +64,7 @@ const Assignments = () => {
             timer: 1500
           });
           refetch()
+          refetchdata()
           setsubmitassignmrent(false)
         } else {
           Swal.fire({
@@ -162,6 +166,7 @@ const Assignments = () => {
             </div>
           </div>)
         }
+
         {
           show && <div className="flex justify-center flex-col items-center absolute bg-white shadow-2xl p-6 pb-0 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
             <form className="max-w-2xl mx-auto pb-12 min-w-[320px]" onSubmit={handleSubmit(onSubmit)}>
@@ -188,7 +193,30 @@ const Assignments = () => {
         }
 
       </div>
-      <button onClick={() => setshow(true)} className='ml-auto block mr-9 bg-orange-400 font-semibold hover:bg-orange-700 hover:text-white transition-all'>send Feedback</button>
+      <h3 className='text-center uppercase text-2xl pt-5'>my submission</h3>
+      <div className='container mx-auto grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-2 p-3 pt-12'>
+      {
+        mysubmission?.map((item) => <div className='shadow-2xl rounded-md' key={item._id}>
+          <div className='p-2'>
+            <h2 className='font-semibold text-lg py-1'>{item?.assignment?.title}</h2>
+            <p className='font-light'>your submission <a target='_blank' className='text-blue-500 underline' href={item?.link}>{item?.link}</a></p>
+            <p className='font-light'>your mark :: {
+                item?.status === "pending"?"pending":item?.marks
+              }
+              
+            </p>
+            {/* <span> */}
+              {/* submitAssignment(e, item._id, item.course._id) */}
+              {/* <button className='bg-teal-400 font-semibold mt-1 hover:text-white hover:bg-teal-600 transition-all'>submit</button> */}
+            {/* </span> */}
+          </div>
+        </div>)
+      }
+      </div>
+      {
+        (!loading && mysubmission.length <= 0) && <p className='text-red-600 ml-4'>no submited assignment available</p>
+      }
+      <button onClick={() => setshow(true)} className='ml-auto block mb-2 mr-9 bg-orange-400 font-semibold hover:bg-orange-700 hover:text-white transition-all'>send Feedback</button>
     </div>
   )
 }

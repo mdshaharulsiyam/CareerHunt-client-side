@@ -3,8 +3,8 @@ import { useContext } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { CareerHuntData } from '../Context/CareerHunt';
 const axiosecure = axios.create({
-    baseURL: 'https://career-hunt-server.vercel.app',
-    // baseURL: 'http://localhost:5000',
+    // baseURL: 'https://career-hunt-server.vercel.app',
+    baseURL: 'http://localhost:5000',
     withCredentials: true,
 })
 const useAxiosSecure = () => {

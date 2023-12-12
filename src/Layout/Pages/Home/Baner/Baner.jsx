@@ -31,7 +31,7 @@ const Baner = () => {
                     <p data-aos="zoom-in-up" style={{ textShadow: '2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3)' }} className='max-w-2xl opacity-90 italic tracking-[1px]'>
                         Discover a world of knowledge at <span className='font-bold text-lg'>CareerHunt</span>. Whether you're passionate about programming, eager to sharpen your business acumen, or exploring diverse topics, we offer expertly curated resources to propel your learning journey. Join our interactive community, access top-notch tutorials, and stay ahead in a rapidly evolving digital landscape. Start your path to success with us – learn, grow, and thrive
                     </p>
-                    <button data-aos="fade-up" style={{ boxShadow: 'rgba(0, 0, 0, 0.56) 0px 22px 70px 4px' }} className='text-black block font-bold my-6 hover:text-blue-700 '>Browse Courses</button>
+                    <Link to={'/Classes'}><button data-aos="fade-up" style={{ boxShadow: 'rgba(0, 0, 0, 0.56) 0px 22px 70px 4px' }} className='text-black block font-bold my-6 hover:text-blue-700 '>Browse Courses</button></Link>
                     {
                         (userData?.role !== 'teacher' && userData?.role !== 'admin') && <span>
                             <Link to={'/teachon'} className='underline' data-tooltip-id="apply_for_teacher"
