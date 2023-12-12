@@ -199,8 +199,15 @@ const Assignments = () => {
           <div className='p-2'>
             <h2 className='font-semibold text-lg py-1'>{item?.assignment?.title}</h2>
             <p className='font-light'>your submission <a target='_blank' className='text-blue-500 underline' href={item?.link}>{item?.link}</a></p>
-            <p className='font-light'>your mark :: {
+            <p className='font-light'>your mark : <span className='font-bold'>
+            {
                 item?.status === "pending"?"pending":item?.marks
+              }
+            </span>
+              
+            </p>
+            <p className='font-light'>feedback : {
+                item?.status !== "pending"&& item?.status
               }
               
             </p>
