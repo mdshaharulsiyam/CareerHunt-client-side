@@ -7,6 +7,7 @@ import { FaPlus, FaRegWindowClose } from "react-icons/fa";
 import useAxiosSecure from '../../Hooks/useAxiosSecure'
 import moment from 'moment';
 import Swal from 'sweetalert2'
+import useGetAllSubmitedAssignment from '../../Hooks/useGetAllSubmitedAssignment'
 const MyClassDetails = () => {
   document.title = "CareerHunt | Dashboard class Details"
   const currentDate = new Date();
@@ -17,6 +18,8 @@ const MyClassDetails = () => {
   const { id } = useParams()
   const [show, setshow] = useState(false)
   const { loading, sammery, refetch } = useGetCourseSammery(currentUser?.useremail, id, targetDate)
+  const { loadingdata, allsubmitions, refetchdata } = useGetAllSubmitedAssignment(currentUser?.useremail, id)
+  console.log(allsubmitions);
   const [submiting, setsubmiting] = useState(false)
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
   const onSubmit = async (data) => {
@@ -28,6 +31,7 @@ const MyClassDetails = () => {
       .then((res) => {
         if (res.data.success) {
           refetch()
+          refetchdata()
           reset()
           setshow(false)
           setsubmiting(false)
@@ -48,6 +52,44 @@ const MyClassDetails = () => {
           setsubmiting(false)
         }
 
+      })
+  }
+  const submitAssignmentmark = (e, id) => {
+    e.preventDefault()
+    const marks = e.target.marks.value
+    const status = e.target.status.value
+    if (marks > 100) {
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "mark Greater then 100!",
+        footer: 'mark should not Greater then 100'
+      });
+    }
+    const data = {
+      status,
+      marks
+    }
+    axiossecure.post(`/mark?useremail=${currentUser?.useremail}&id=${id}`, data)
+      .then((res) => {
+        if (res.data.success) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "mark updated succesfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          refetch()
+          refetchdata()
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: 'unable to update mark'
+          });
+        }
       })
   }
   return (
@@ -109,6 +151,31 @@ const MyClassDetails = () => {
           </form>
         </div>
       }
+      <h3 className='text-center text-3xl uppercase'>submited assignments </h3>
+      {
+        allsubmitions.map(item => <div key={item?._id} className="bg-white space-y-3 p-4 rounded-lg shadow my-4">
+          <div className="text-sm">
+            <span className='flex items-center gap-2'>
+              <img className='h-10 w-10 rounded' src={item?.student?.profileImage} alt="" />
+              <div className="text-black font-semibold ">{item?.student?.username}</div>
+            </span>
+            <h4 className='text-xl font-semibold'>assignment :  {item?.assignment?.title}</h4>
+            <p className=' font-medium'>submited link : <a target='_blank' className='underline text-blue-500' href={item?.link}>{item?.link}</a></p>
+            <div>
+            </div>
+            <span>
+              <form onSubmit={(e) => {
+                submitAssignmentmark(e, item._id)
+              }}>
+                <input className='border mr-1 border-black border-b-2 p-1' type="number" name='marks' required placeholder='mark ' />
+                <input className='border mr-1 border-black border-b-2 p-1' type="text" name='status'required placeholder='additional text' />
+                <button className='bg-teal-400 font-semibold mt-1 hover:text-white hover:bg-teal-600 transition-all'>submit</button>
+              </form>
+            </span>
+          </div>
+        </div>)
+      }
+
     </div>
   )
 }

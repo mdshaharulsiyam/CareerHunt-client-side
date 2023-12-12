@@ -64,7 +64,6 @@ const Assignments = () => {
             timer: 1500
           });
           refetch()
-          refetchdata()
           setsubmitassignmrent(false)
         } else {
           Swal.fire({
