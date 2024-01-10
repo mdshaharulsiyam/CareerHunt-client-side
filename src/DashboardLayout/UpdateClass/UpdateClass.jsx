@@ -45,7 +45,7 @@ const UpdateClass = () => {
                     icon: "error",
                     title: "Oops...",
                     text: "Something went wrong!",
-                    footer: 'unable to add new course'
+                    footer: 'unable to update product'
                 });
             }
         }
@@ -87,7 +87,7 @@ const UpdateClass = () => {
                 <span>chooes a image for class</span>
                 <input className="file-input file-input-bordered w-full " type="file" placeholder="image" {...register("img")} />
                 <textarea className="block outline-none border-b-2 w-full mx-auto p-2 h-20 resize-none pl-0 border-b-gray-400 my-2" type="text" defaultValue={CourseDetails?.description} {...register("description")} />
-                <button className="w-full bg-red-600 cursor-pointer rounded-lg text-white py-2 hover:bg-red-900 transition-all" type="submit">{loading ? <span className="loading loading-bars loading-xs"></span> : 'Add class'}</button>
+                <button className="w-full bg-red-600 cursor-pointer rounded-lg text-white py-2 hover:bg-red-900 transition-all" type="submit">{loading ? <span className="loading loading-bars loading-xs"></span> : 'update class'}</button>
             </form>
         </div>
     )

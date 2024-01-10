@@ -27,7 +27,88 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-               
+
+
+            })
+            .catch((error) => {
+                setloading(false)
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: `${error.message}`,
+                    footer: 'unable to log in user'
+                });
+            });
+    }
+    const loggindemouser = () => {
+        setloading(true)
+        loginuser('user11@gmail.com', 'user11@gmail.coM')
+            .then((userCredential) => {
+                setloading(false)
+                const user = userCredential.user;
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `logged in user succesfuly`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+            })
+            .catch((error) => {
+                setloading(false)
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: `${error.message}`,
+                    footer: 'unable to log in user'
+                });
+            });
+    }
+    const loggindemoadmin = () => {
+        setloading(true)
+        loginuser('admin11@gmail.com', 'admin11@gmail.coM')
+            .then((userCredential) => {
+                setloading(false)
+                const user = userCredential.user;
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `logged in user succesfuly`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+
+            })
+            .catch((error) => {
+                setloading(false)
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: `${error.message}`,
+                    footer: 'unable to log in user'
+                });
+            });
+    }
+    const loggindemoteacher = () => {
+        setloading(true)
+        loginuser('teacher11@gmail.com', 'teacher11@gmail.coM')
+            .then((userCredential) => {
+                setloading(false)
+                const user = userCredential.user;
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `logged in user succesfuly`,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
 
             })
             .catch((error) => {
@@ -45,8 +126,16 @@ const Login = () => {
     return (
         <div>
             {/* <!-- Hero --> */}
+            {
+                loadings && <span className="loading loading-ring  absolute w-28 z-20 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"></span>
+            }
             <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 {/* <!-- Grid --> */}
+                <span className="text-center block">
+                    <button onClick={loggindemouser} className="hover:scale-105 active:scale-90 bg-red-500 text-white hover:text-black hover:bg-red-300 transition-all m-2  inline-block">demo user</button>
+                    <button onClick={loggindemoadmin} className="hover:scale-105 active:scale-90  bg-green-500 text-white hover:text-black hover:bg-green-300 transition-all m-2  inline-block">demo admin</button>
+                    <button onClick={loggindemoteacher} className="hover:scale-105 active:scale-90  bg-orange-500 text-white hover:text-black hover:bg-orange-300 transition-all m-2  inline-block">demo teacher</button>
+                </span>
                 <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
                     <div class="relative ms-4">
                         <img class="w-full rounded-md" src="https://i.ibb.co/y5ShHN6/5-beginner-level-online-courses-to-help-you-learn-programming.webp" />

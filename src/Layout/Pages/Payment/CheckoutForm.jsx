@@ -33,7 +33,7 @@ const CheckoutForm = () => {
         if (!CourseDetails?.price || !currentUser?.useremail) {
             return
         }
-        axiosSecure.post('/create-payment-intent', { price: 50 })
+        axiosSecure.post('/create-payment-intent', { price: CourseDetails?.price})
             .then((res) => {
                 setclientSecret(res.data.clientSecret)
             })
