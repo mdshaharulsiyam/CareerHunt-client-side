@@ -38,8 +38,8 @@
 
 ------------
 ###### all class page
-![product details page](https://i.ibb.co/Cns9Np8/screencapture-gregarious-mandazi-69cbd9-netlify-app-Classes-2024-01-22-17-04-25.png "product details page")
+![product all class page](https://i.ibb.co/Cns9Np8/screencapture-gregarious-mandazi-69cbd9-netlify-app-Classes-2024-01-22-17-04-25.png "product all class page")
 
 ------------
 ###### dashboard profile page
-![dashboard product page](https://i.ibb.co/YhpkqwJ/screencapture-gregarious-mandazi-69cbd9-netlify-app-dashboard-dashboard-2023-12-11-15-08-15.png "dashboard product page")
+![dashboard profile page](https://i.ibb.co/GWQ1VRt/screencapture-gregarious-mandazi-69cbd9-netlify-app-dashboard-dashboard-2024-01-22-17-57-19.png "dashboard profile page")
