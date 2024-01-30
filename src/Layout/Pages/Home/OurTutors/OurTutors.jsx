@@ -30,9 +30,9 @@ const OurTutors = () => {
             >
                 {
                     TeacherData.map(item => <SwiperSlide key={item._id}>
-                        <div className="flex flex-col justify-center max-w-xs p-6 rounded-xl sm:px-12 dark:bg-gray-900 dark:text-gray-100">
-                            <img src={item?.profileImage} alt="" className="w-36 h-36 p-3 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
-                            <div className="space-y-4 text-center divide-y dark:divide-gray-700">
+                        <div className="flex flex-col justify-center max-w-xs p-6 rounded-xl sm:px-12 ">
+                            <img src={item?.profileImage} alt="" className="w-36 h-36 p-3 mx-auto rounded-full  aspect-square" />
+                            <div className="space-y-4 text-center divide-y ">
                                 <div className="my-2 space-y-1">
                                     <h2 className="text-xl font-semibold sm:text-2xl">{item?.username}</h2>
                                 </div>
@@ -49,7 +49,7 @@ const OurTutors = () => {
                     TeacherLoadin && <SwiperSlide >
                     <div className="flex flex-col m-8 rounded w-full animate-pulse h-96k ">
                         <div className="h-36 w-36 mx-auto rounded-full bg-gray-700"></div>
-                        <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 dark:bg-gray-900">
+                        <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 ">
                             <div className="w-full h-6 rounded bg-gray-700"></div>
                             <div className="w-full h-6 rounded bg-gray-700"></div>
                             <div className="w-3/4 h-6 rounded bg-gray-700"></div>

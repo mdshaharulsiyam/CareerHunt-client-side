@@ -41,7 +41,7 @@ const Courses = () => {
       {
         populerCoursesLoading && <div className="flex my-8 rounded w-full animate-pulse h-[400px] shadow-2xl justify-center items-center px-4">
           <div className="h-full w-1/2 rounded-t bg-gray-700"></div>
-          <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 dark:bg-gray-900">
+          <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 ">
             <div className="w-full h-6 rounded bg-gray-700"></div>
             <div className="w-full h-6 rounded bg-gray-700"></div>
             <div className="w-3/4 h-6 rounded bg-gray-700"></div>
@@ -72,12 +72,12 @@ const Courses = () => {
         className="mySwiper"
       >{
           populerCourses.map(item => <SwiperSlide key={item._id}>
-            <div class="group md:flex mb-10 h-full bg-white border border-gray-200 items-center shadow-sm overflow-hidden dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7] px-4">
+            <div class="group md:flex mb-10 h-full bg-white border border-gray-200 items-center shadow-sm overflow-hidden  px-4">
               <div class=" h-[400px] flex flex-col justify-center items-cente">
                 <img className='w-full h-full object-cover' src={item?.img} alt="" />
               </div>
               <div class="p-2 md:p-6">
-                <h3 class="sm:text-xl font-semibold text-sm text-gray-800 dark:text-gray-300 dark:hover:text-white">
+                <h3 class="sm:text-xl font-semibold text-sm text-gray-800 ">
                   {item?.title}
                 </h3>
                 <p className='pt-2 text-xs sm:text-base'><span className='hidden sm:inline'>Instructor :</span> <span className='font-semibold'>{item?.teacher?.username}</span></p>
@@ -88,7 +88,7 @@ const Courses = () => {
                   <p>totalenroll : ({item?.totalenroll})</p>
                   <p>price : <span className='font-bold'>${item?.price}</span></p>
                 </span>
-                <Link to={`/details/${item._id}`} class="font-bold py-3  inline-flex justify-center items-center gap-x-2 px-10 mt-2 bg-teal-600 text-gray-800 shadow-sm hover:bg-green-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 hover:text-white transition-all dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" >
+                <Link to={`/details/${item._id}`} class="font-bold py-3  inline-flex justify-center items-center gap-x-2 px-10 mt-2 bg-teal-600 text-gray-800 shadow-sm hover:bg-green-600 disabled:opacity-50 disabled:pointer-events-none " >
                   Enroll
                 </Link>
               </div>
@@ -109,7 +109,7 @@ const Courses = () => {
         {
           Loading && <div className="flex flex-col m-8 rounded w-full animate-pulse h-96k shadow-2xl">
             <div className="h-48 rounded-t bg-gray-700"></div>
-            <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 dark:bg-gray-900">
+            <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 ">
               <div className="w-full h-6 rounded bg-gray-700"></div>
               <div className="w-full h-6 rounded bg-gray-700"></div>
               <div className="w-3/4 h-6 rounded bg-gray-700"></div>

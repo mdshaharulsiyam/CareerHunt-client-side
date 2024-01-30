@@ -134,7 +134,7 @@ const Login = () => {
                 <span className="text-center block">
                     <button onClick={loggindemouser} className="hover:scale-105 active:scale-90 bg-red-500 text-white hover:text-black hover:bg-red-300 transition-all m-2  inline-block">demo user</button>
                     <button onClick={loggindemoadmin} className="hover:scale-105 active:scale-90  bg-green-500 text-white hover:text-black hover:bg-green-300 transition-all m-2  inline-block">demo admin</button>
-                    <button onClick={loggindemoteacher} className="hover:scale-105 active:scale-90  bg-orange-500 text-white hover:text-black hover:bg-orange-300 transition-all m-2  inline-block">demo teacher</button>
+                    <button onClick={loggindemoteacher} className="hover:scale-105 active:scale-90  bg-orange-500 text-white hover:text-black hover:bg-orangesdfsdfsdfsdfsdfsdfsdf-300 transition-all m-2  inline-block">demo teacher</button>
                 </span>
                 <div class="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
                     <div class="relative ms-4">

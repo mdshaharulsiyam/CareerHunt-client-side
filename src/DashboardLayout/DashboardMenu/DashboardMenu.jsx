@@ -56,19 +56,19 @@ const DashboardMenu = () => {
     </>
     const { isPending, userData, refetch } = useGetUserData(currentUser?.useremail)
     return (
-        <div className="h-full p-3 space-y-2 w-60 dark:bg-gray-900 dark:text-gray-100">
+        <div className="h-full p-3 space-y-2 w-60 ">
             <div className="md:flex items-center p-2 space-x-4 hidden">
-                <img src={currentUser?.profileImage} alt="" className="w-12 h-12 rounded-full dark:bg-gray-500" />
+                <img src={currentUser?.profileImage} alt="" className="w-12 h-12 rounded-full " />
                 <div>
                     <h2 className="text-lg font-semibold">{currentUser?.username}</h2>
                     <span className="flex items-center space-x-1">
-                        <p rel="noopener noreferrer" className="text-xs hover:underline dark:text-gray-400">{userData?.role}</p> <span className="h-2 w-2 rounded-full bg-green-600"></span>
+                        <p rel="noopener noreferrer" className="text-xs hover:underline ">{userData?.role}</p> <span className="h-2 w-2 rounded-full bg-green-600"></span>
                     </span>
                 </div>
             </div>
-            <div className="divide-y menues dark:divide-gray-700">
+            <div className="divide-y menues ">
                 <ul className="pt-2 pb-4 space-y-1 text-sm">
-                    <li className="dark:bg-gray-800 dark:text-gray-50">
+                    <li className="">
                         <NavLink to={'dashboard'} rel="noopener noreferrer" className="flex items-center p-2 space-x-3 rounded-md">
                             <CgProfile className="text-2xl" />
                             <span>Profile</span>
@@ -76,7 +76,7 @@ const DashboardMenu = () => {
                     </li>
                     {/* userData?.role === 'student' &&  */}
                     {
-                        <li className="dark:bg-gray-800 dark:text-gray-50">
+                        <li className="">
                             <NavLink to={'myenrollment'} rel="noopener noreferrer" className="flex items-center p-2 space-x-3 rounded-md">
                                 <MdClass className="text-2xl" />
                                 <span>MyEnrollment</span>
@@ -99,7 +99,7 @@ const DashboardMenu = () => {
                     </li>
                     <li>
                         <button onClick={userSignOut} rel="noopener noreferrer" href="#" className="flex items-center p-2 space-x-3 rounded-md bg-transparent active:scale-95">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-6 h-6 fill-current dark:text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-6 h-6 fill-current ">
                                 <path d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"></path>
                                 <rect width="32" height="64" x="256" y="232"></rect>
                             </svg>

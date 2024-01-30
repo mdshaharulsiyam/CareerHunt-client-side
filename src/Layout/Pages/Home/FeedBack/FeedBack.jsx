@@ -43,7 +43,7 @@ const FeedBack = ({ show }) => {
                             <div className='flex justify-start gap-2 items-center flex-wrap pb-2'>
                                 <img className='h-12 w-12 rounded-full' src={item?.userimage} alt="" />
                                 <span>
-                                    <h3 className='text-sm'>{item?.username}</h3>
+                                    <h3 className='text-sm dark:text-white'>{item?.username}</h3>
                                     <StarRatings
                                         rating={parseInt(item?.rating)}
                                         starRatedColor="orange"

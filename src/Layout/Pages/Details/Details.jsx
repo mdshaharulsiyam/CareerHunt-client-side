@@ -25,13 +25,13 @@ const Details = () => {
         <div>
             {loading && <div className="flex my-8 rounded w-full animate-pulse h-[400px] shadow-2xl justify-center items-center px-4">
                 <div className="h-full w-1/2 rounded-t bg-gray-700"></div>
-                <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 dark:bg-gray-900">
+                <div className="flex-1 px-4 py-8 space-y-4 sm:p-8 ">
                     <div className="w-full h-6 rounded bg-gray-700"></div>
                     <div className="w-full h-6 rounded bg-gray-700"></div>
                     <div className="w-3/4 h-6 rounded bg-gray-700"></div>
                 </div>
             </div>}
-            <section className="dark:bg-gray-800 dark:text-gray-100">
+            <section className="">
                 <div className="container flex flex-col justify-center items-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
                     <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 w-full sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                         <img src={CourseDetails?.img} alt="" className="w-full object-cover h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
@@ -57,10 +57,10 @@ const Details = () => {
                                 singleenroll.length > 0 ? <p className='uppercase font-bold '>you have enrolled this course</p> : <Link to={`/payment/${CourseDetails?._id}`}
                                     data-tooltip-id="pay"
                                     data-tooltip-content="pay for enroll "
-                                    data-tooltip-place="left" rel="noopener noreferrer" className="flex justify-start items-center gap-1 bg-orange-600 px-10 hover:text-white text-black hover:bg-orange-500 py-2 text-lg font-semibold rounded dark:bg-violet-400 dark:text-gray-900"><FaRegCreditCard /> Pay</Link >
+                                    data-tooltip-place="left" rel="noopener noreferrer" className="flex justify-start items-center gap-1 bg-orange-600 px-10 hover:text-white text-black hover:bg-orange-500 py-2 text-lg font-semibold rounded "><FaRegCreditCard /> Pay</Link >
                             }
                             <Tooltip id="pay" />
-                            <Link to={-1} rel="noopener noreferrer" className="flex justify-start items-center gap-1 px-8 py-1 text-lg font-semibold border-4 hover:border-gray-400 transition-all border-transparent rounded dark:border-gray-100"><FaArrowLeft /> back</Link >
+                            <Link to={-1} rel="noopener noreferrer" className="flex justify-start items-center gap-1 px-8 py-1 text-lg font-semibold border-4 hover:border-gray-400 transition-all border-transparent rounded "><FaArrowLeft /> back</Link >
                         </div>
                     </div>
                 </div>
